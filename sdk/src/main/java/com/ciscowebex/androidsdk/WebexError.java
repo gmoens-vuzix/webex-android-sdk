@@ -61,10 +61,10 @@ public class WebexError<T> {
     }
 
     public static WebexError from(okhttp3.Response res) {
-        StringBuilder message = new StringBuilder().append(res.code()).append("/").append(res.message());
+        StringBuilder message = new StringBuilder();//.append(res.code()).append("/").append(res.message());
         try {
             ResponseBody body = res.body();
-            message.append("/").append(body == null ? "" : body.string());
+            message/*.append("/")*/.append(body == null ? "" : body.string());
         } catch (IOException e) {
             Ln.e(e);
         }
