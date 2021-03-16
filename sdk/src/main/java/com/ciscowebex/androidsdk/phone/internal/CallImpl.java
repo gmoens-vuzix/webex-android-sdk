@@ -1022,7 +1022,7 @@ public class CallImpl implements Call {
         List<CallMembershipImpl> newMemberships = new ArrayList<>();
         List<CallObserver.CallMembershipChangedEvent> events = new ArrayList<>();
         for (LocusParticipantModel participant : participants) {
-            if (!participant.isValidCiUser()) {
+            if (participant.isHideInRoster()) {
                 continue;
             }
             CallMembershipImpl membership = null;
